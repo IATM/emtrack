@@ -1,0 +1,7 @@
+h1 Editing clinical history
+
+.container
+	== render 'form'
+
+	= link_to 'Show', patient_clinical_history_path(@patient, @patient.clinical_history)
+

@@ -1,0 +1,20 @@
+= simple_form_for([@patient, @clinical_history], html:{class:'form-horizontal'}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :pathologic, as: :check_boxes, collection: ClinicalHistory::PATHOLOGIC_OPTS, item_wrapper_class: 'checkbox-inline'
+    = f.input :autoimmune, as: :check_boxes, collection: ClinicalHistory::AUTOIMMUNE_OPTS, item_wrapper_class: 'checkbox-inline'
+    = f.input :neurologic, as: :check_boxes, collection: ClinicalHistory::NEUROLOGIC_OPTS, item_wrapper_class: 'checkbox-inline'
+    = f.input :psychiatric, as: :check_boxes, collection: ClinicalHistory::PSYCHIATRIC_OPTS, item_wrapper_class: 'checkbox-inline'
+    = f.input :surgical
+    = f.input :ob_gyn, as: :check_boxes, collection: ClinicalHistory::OB_GYN_OPTS, item_wrapper_class: 'checkbox-inline'
+    = f.input :birth_control
+    = f.input :toxic, as: :check_boxes, collection: ClinicalHistory::TOXIC_OPTS, item_wrapper_class: 'checkbox-inline'
+    = f.input :addictions
+    = f.input :allergic
+    = f.input :recent_vaccines
+    = f.input :trauma
+    = f.input :comments
+
+  .form-actions
+    = f.button :submit

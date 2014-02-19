@@ -1,0 +1,75 @@
+.panel.panel-primary
+  .panel-heading
+    h3 = "History of present illness #{@history_of_present_illness.id} for visit #{@visit.id} for patient #{@patient.full_name}"
+  .panel-body
+    dl.dl-horizontal
+      .row
+      .col-md-4
+        dt Comments
+        dd = @history_of_present_illness.comments
+        dt Information source
+        dd = @history_of_present_illness.info_source.join(", ") if @history_of_present_illness.info_source
+        dt Start Date
+        dd = @history_of_present_illness.start_date
+        dt Episode duration
+        dd = @history_of_present_illness.episode_duration
+        dt Description
+        dd = @history_of_present_illness.description
+        dt Difficulty walking
+        dd = @history_of_present_illness.difficulty_walking
+        dt Upper motor compromise
+        dd = @history_of_present_illness.motor_compromise_upper.join(", ") if @history_of_present_illness.motor_compromise_upper
+        dt Lower motor compromise
+        dd = @history_of_present_illness.motor_compromise_lower.join(", ") if @history_of_present_illness.motor_compromise_lower
+        dt Upper sensory compromise
+        dd = @history_of_present_illness.sensory_compromise_upper.join(", ") if @history_of_present_illness.sensory_compromise_upper
+        dt Lower sensory compromise
+        dd = @history_of_present_illness.sensory_compromise_lower.join(", ") if @history_of_present_illness.sensory_compromise_lower
+        dt Trunk sensory compromise
+        dd = @history_of_present_illness.sensory_compromise_trunk
+
+      .col-md-4
+        dt Lhermitte sensory compromise
+        dd = @history_of_present_illness.sensory_compromise_lhermitte
+        dt Bladder intestinal dysfunction
+        dd = @history_of_present_illness.bladder_intestinal_dysfunction
+        dt Sexual dysfunction
+        dd = @history_of_present_illness.sexual_dysfunction
+        dt Oculomotor dysfunction
+        dd = @history_of_present_illness.oculomotor_dysfunction
+        dt Vestibulocochlear dysfunction
+        dd = @history_of_present_illness.vestibulocochlear_dysfunction
+        dt Problems with language or swallowing
+        dd = @history_of_present_illness.language_swallowing_problems
+        dt Optical neuritis
+        dd = @history_of_present_illness.optical_neuritis.join(", ") if @history_of_present_illness.optical_neuritis
+        dt Cognitive dysfunction
+        dd = @history_of_present_illness.cognitive_dysfunction
+        dt Psychiatric symptoms
+        dd = @history_of_present_illness.psychiatric_symptoms
+        dt Fatigue
+        dd = @history_of_present_illness.fatigue
+        dt Uhtoff
+        dd = @history_of_present_illness.uhtoff
+        dt Other
+        dd = @history_of_present_illness.other
+
+      .col-md-4
+        dt Episode severity
+        dd = @history_of_present_illness.episode_severity
+        dt Recovery
+        dd = @history_of_present_illness.recovery
+        dt Certainty
+        dd = @history_of_present_illness.certainty
+        dt Associated event
+        dd = @history_of_present_illness.associated_event.join(", ") if @history_of_present_illness.associated_event
+        dt Hospitalization
+        dd = @history_of_present_illness.hospitalization
+        dt Days hospitalized
+        dd = @history_of_present_illness.days_hospitalized
+        dt Steroid treatment
+        dd = @history_of_present_illness.steroid_treatment.join(", ") if @history_of_present_illness.steroid_treatment
+        dt Steroid dose
+        dd = @history_of_present_illness.steroid_dose
+  .panel-footer
+    h4 Aca van los botones de edicion, todavia no se como serian los paths

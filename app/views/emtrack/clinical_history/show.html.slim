@@ -1,0 +1,32 @@
+h3 = "Clinical history #{@clinical_history.id} for patient #{@patient.full_name}"
+
+.container
+  dl.dl-horizontal
+    dt Pathologic:
+    dd = @clinical_history.pathologic.join(", ")
+    dt Autoimmune:
+    dd = @clinical_history.autoimmune.join(", ")
+    dt Neurologic:
+    dd = @clinical_history.neurologic.join(", ")
+    dt Psychiatric:
+    dd = @clinical_history.psychiatric.join(", ")
+    dt Surgical:
+    dd = @clinical_history.surgical
+    dt Ob gyn:
+    dd = @clinical_history.ob_gyn.join(", ")
+    dt Birth control:
+    dd = @clinical_history.birth_control
+    dt Toxic:
+    dd = @clinical_history.toxic.join(", ")
+    dt Addictions:
+    dd = @clinical_history.addictions
+    dt Allergic:
+    dd = @clinical_history.allergic
+    dt Recent vaccines:
+    dd = @clinical_history.recent_vaccines
+    dt Trauma:
+    dd = @clinical_history.trauma
+    dt Comments:
+    dd = @clinical_history.comments
+
+  = link_to 'Edit', edit_patient_clinical_history_path(@patient,@clinical_history), class: "btn btn-primary"

@@ -1,0 +1,61 @@
+= simple_form_for([@patient, @visit, @history_of_present_illness], html: {class: 'form-horizontal'}) do |f|
+  = f.error_notification
+
+  .row
+    .col-lg-6
+      = f.input :info_source, as: :check_boxes, collection: HistoryOfPresentIllness::INFO_SOURCE_OPTS, item_wrapper_class: 'checkbox-inline'
+      = f.input :start_date
+      = f.input :episode_duration
+      = f.input :description
+      = f.input :difficulty_walking, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+      .row.well
+        h4 Compromiso Motor
+        .col-lg-6
+          = f.input :motor_compromise_upper, as: :check_boxes, collection: HistoryOfPresentIllness::LATERALITY_OPTS, item_wrapper_class: 'checkbox-inline', label: "Upper"
+        .col-lg-6
+          = f.input :motor_compromise_lower, as: :check_boxes, collection: HistoryOfPresentIllness::LATERALITY_OPTS, item_wrapper_class: 'checkbox-inline', label: "Lower"
+      .row.well
+        h4 Compromiso Sensitivo
+        .row
+          .col-lg-6
+            = f.input :sensory_compromise_upper, as: :check_boxes, collection: HistoryOfPresentIllness::LATERALITY_OPTS, item_wrapper_class: 'checkbox-inline', label: "Upper"
+          .col-lg-6
+            = f.input :sensory_compromise_lower, as: :check_boxes, collection: HistoryOfPresentIllness::LATERALITY_OPTS, item_wrapper_class: 'checkbox-inline', label: "Lower"
+        .row
+          .col-lg-6
+            = f.input :sensory_compromise_trunk, as: :radio_buttons, item_wrapper_class: 'radio-inline', label: "Trunk"
+          .col-lg-6
+            = f.input :sensory_compromise_lhermitte, as: :radio_buttons, item_wrapper_class: 'radio-inline', label: "Lhermitte"
+      .well
+        h4 Disfunciones
+        = f.input :bladder_intestinal_dysfunction, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+        = f.input :sexual_dysfunction, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+        = f.input :oculomotor_dysfunction, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+        = f.input :vestibulocochlear_dysfunction, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+        = f.input :language_swallowing_problems, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+    .col-lg-6
+      = f.input :optical_neuritis, as: :check_boxes, collection: HistoryOfPresentIllness::LATERALITY_OPTS, item_wrapper_class: 'checkbox-inline'
+      = f.input :cognitive_dysfunction, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+      = f.input :psychiatric_symptoms, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+      = f.input :fatigue, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+      = f.input :uhtoff, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+      = f.input :other
+      = f.input :episode_severity, as: :radio_buttons, collection: HistoryOfPresentIllness::EPISODE_SEVERITY_OPTS, item_wrapper_class: 'radio-inline'
+      = f.input :recovery, as: :radio_buttons, collection: HistoryOfPresentIllness::RECOVERY_OPTS, item_wrapper_class: 'radio-inline'
+      = f.input :certainty, as: :radio_buttons, collection: HistoryOfPresentIllness::CERTAINTY_OPTS, item_wrapper_class: 'radio-inline'
+      = f.input :associated_event, as: :check_boxes, collection: HistoryOfPresentIllness::ASSOCIATED_EVENT_OPTS, item_wrapper_class: 'checkbox-inline'
+      .row
+        .col-lg-6
+          = f.input :hospitalization, as: :radio_buttons, item_wrapper_class: 'radio-inline'
+        .col-lg-6
+          = f.input :days_hospitalized, as: :integer
+      .row
+        .col-lg-6
+          = f.input :steroid_treatment, as: :check_boxes, collection: HistoryOfPresentIllness::STEROID_TREATMENT_OPTS, item_wrapper_class: 'checkbox-inline'
+        .col-lg-6
+          = f.input :steroid_dose
+      = f.input :comments
+  hr
+  .row
+    .form-actions
+      = f.button :submit
